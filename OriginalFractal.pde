@@ -1,9 +1,17 @@
 public void setup() {
   size(1000, 1000);
   background(0);
-  stroke(255);
+  stroke(0, 255, 255);
   noFill();
-  spiral(500, 500, 150);
+  fractal(500, 500, 120);
+}
+public void fractal(int x, int y, int siz){
+  spiral(x, y, siz/2);
+  if(siz>=1){
+    fractal(x-siz*2, y-siz*2, siz/2);
+    fractal(x-siz*2, y+siz*2, siz/2);
+    
+  }
 }
 public int fibonacci(int n) {
   if (n==0) {
