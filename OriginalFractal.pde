@@ -32,19 +32,19 @@ public void spiral(int myX, int myY, int size){
     if (i>2) {
       if (Math.sin(PI/2+i*PI/2)>=0) { //if above x-axis
         if (i%2==0) {
-          makeArcs(myX, myY-fibonacci(i-2)*size/2, size*fibonacci(i), PI/2+i*PI/2);
-          myY-=fibonacci(i-2)*size/2;
+          makeArcs(myX, myY-fibonacci(i-2)*(int)(size/2), size*fibonacci(i), PI/2+i*PI/2);
+          myY-=fibonacci(i-2)*(int)(size/2);
         } else if (i%2==1) {
-          makeArcs(myX-fibonacci(i-1)*size/2, myY, size*fibonacci(i), PI/2+i*PI/2);
-          myX-=fibonacci(i-1)*size/2;
+          makeArcs(myX-fibonacci(i-1)*(int)(size/2), myY, size*fibonacci(i), PI/2+i*PI/2);
+          myX-=fibonacci(i-1)*(int)(size/2);
         }
       }else{
         if (i%2==0) {
           makeArcs(myX, myY+fibonacci(i-2)*size/2, size*fibonacci(i), PI/2+i*PI/2);
-          myY+=fibonacci(i-2)*size/2;
+          myY+=fibonacci(i-2)*(int)(size/2);
         } else if (i%2==1) {
           makeArcs(myX+fibonacci(i-2)*size/2, myY, size*fibonacci(i), PI/2+i*PI/2);
-          myX+=fibonacci(i-2)*size/2;
+          myX+=fibonacci(i-2)*(int)(size/2);
         }
       } 
     } else {
