@@ -8,8 +8,8 @@ public void setup() {
 public void fractal(int x, int y, int siz){
   spiral(x, y, siz/2);
   if(siz>=1){
-    fractal(x-siz*2, y-siz*2, siz/2);
-    fractal(x-siz*2, y+siz*2, siz/2);
+    fractal(x-siz*2, y-siz*2, (int)(siz/2));
+    fractal(x-siz*2, y+siz*2, (int)(siz/2));
     
   }
 }
@@ -40,10 +40,10 @@ public void spiral(int myX, int myY, int size){
         }
       }else{
         if (i%2==0) {
-          makeArcs(myX, myY+fibonacci(i-2)*size/2, size*fibonacci(i), PI/2+i*PI/2);
+          makeArcs(myX, myY+fibonacci(i-2)*(int)(size/2), size*fibonacci(i), PI/2+i*PI/2);
           myY+=fibonacci(i-2)*(int)(size/2);
         } else if (i%2==1) {
-          makeArcs(myX+fibonacci(i-2)*size/2, myY, size*fibonacci(i), PI/2+i*PI/2);
+          makeArcs(myX+fibonacci(i-2)*(int)(size/2), myY, size*fibonacci(i), PI/2+i*PI/2);
           myX+=fibonacci(i-2)*(int)(size/2);
         }
       } 
